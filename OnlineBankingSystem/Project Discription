@@ -6,7 +6,7 @@ Users of this project are
 • Accountant
 • Customer
 Roles of Accountant are
-• Login using his/her username and password
+• Login using his/her email and password
 • Adding new account for customer
 • Editing already available account
 • Removing the account by using account number
@@ -15,6 +15,80 @@ Roles of Accountant are
 • Taking care of deposit and withdrawal operations
 
 Roles of Customer are
-• Login using his/her username and password
+• Login using his/her email and password
 • Transfer the money from his account to other account
 • Checking the transaction history
+
+
++ "|  ENTER YOUR NUMBER                            			|\r\n"
+				+ "+-----------------------------------------------------------+|\r\n"
+				+ "|                                               			| \r\n"
+				+ "| 1.Add new account                      			    |\r\n"
+				+ "| 2.UpdateExistingCustomer account                      	|\r\n"
+				+ "| 3.Remove the account by using account number  			|\r\n"
+				+ "| 4.Viewing particular account details account number   	|\r\n"
+				+ "| 5.Viewing all the account details          			|\r\n"
+				+ "| 6.Taking care of deposit and withdrawal operations 	|\r\n"
+				+ "| 7.Exit                                    				|\r\n"
+				+ "+-----------------------------------------------------------+" + consolecolor.RESET);
+				
+					consolecolor.GREEN + "+-----------------------------------------------------------+\r\n"
+						+ "|  ENTER YOUR NUMBER                            			|\r\n"
+						+ "+-----------------------------------------------------------+\r\n"
+						+ "|                                               			| \r\n"
+						+ "| 1.Transfer the money from his account to other account    |\r\n"
+						+ "| 2.Checking the transaction history                      	|\r\n"
+						+ "| 3. Exit  													|\r\n"
+						+ "+-----------------------------------------------------------+" + consolecolor.RESET);
+
+ ****************Javabeans******************
+ 
+ Transaction:
+    private int Transaction_Id;
+	private String  SenderName;
+	private String RecieverName;
+	private int Balance;
+	private String date;
+	
+	Accountant:
+	private int Acc_Id;
+	private String name;
+	private String email;
+	private String password;
+	
+	
+	insert into Accountant values (12345,'Rishav','rishav@gmail.com',123);
+	
+	Customer:
+	private int Customer_Id;
+	private String name;
+	private String email;
+	private int password;
+	private int AccountNo;
+	private int Balance;
+
+1.
+create Table Accountant(
+AccountNo int primary key Auto_increment,
+Name varchar(30),
+email varchar(30) unique,
+password int unique
+);
+
+2.
+create Table Customer(
+Customer_Id int  primary key Auto_increment,
+name varchar(30) ,
+email varchar(30) unique,
+password int unique,
+AccountNo int unique,
+Balance int unique
+);
+
+create table transaction(
+Transaction_Id int primary key Auto_increment,
+Sender varchar(40),
+Receiver varchar(40),
+Balance int ,
+date varchar(60)
+);

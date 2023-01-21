@@ -1,0 +1,70 @@
+package com.Rishav.Main;
+
+import java.util.Scanner;
+
+import com.Rishav.Exceptions.AccountantException;
+import com.Rishav.Exceptions.CustomerException;
+import com.Rishav.Exceptions.TransactionException;
+import com.Rishav.UseCase.MainAccountant;
+import com.Rishav.UseCase.MainCustomer;
+
+public class Main {
+
+	public static void main(String[] args) throws AccountantException, CustomerException, TransactionException {
+		// TODO Auto-generated method stub
+
+
+		Scanner sc = new Scanner(System.in);
+
+		MainAccountant dao = new MainAccountant();
+		MainCustomer c = new MainCustomer();
+		while (true) {
+			int n = dao.firstPrint();
+			if (n == 1) {
+				boolean ch = dao.Logincheck();
+				if (ch == true) {
+					while (true) {
+						int an = dao.AccoutentWorkType();
+						if (an == 1) {
+							dao.addCustomer();
+						} else if (an == 2) {
+							dao.UpdateExistingCustomer();
+						} else if (an == 3) {
+							dao.RemoveCustomerAccNo();
+						} else if (an == 4) {
+							dao.VeiwParticularDetal();
+						} else if (an == 5) {
+							dao.AllCustomerDetail();
+						} else if (an == 6) {
+							dao.AllTransaction();
+						} else {
+							break;
+						}
+
+					}
+				}
+			} else if (n == 2) {
+				boolean bh = c.LoginCheckCustomer();
+				if (bh == true) {
+					while (true) {
+						int cw = c.CustomerWorkType();
+						if (cw == 1) {
+							c.SenderToMoney();
+						} else if (cw == 2) {
+							c.transactionhistory();
+						} else {
+							break;
+						}
+					}
+				}
+			} else if (n == 3) {
+				break;
+			}
+		}
+
+	}
+
+	}
+
+
+

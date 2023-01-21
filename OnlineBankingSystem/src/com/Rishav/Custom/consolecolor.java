@@ -1,6 +1,6 @@
 package com.Rishav.Custom;
 
-public class ConsoleColors {
+public class consolecolor {
 	   
 	public static final String RESET = "\033[0m"; // Text Reset
 

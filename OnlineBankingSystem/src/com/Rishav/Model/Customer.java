@@ -5,13 +5,13 @@ public class Customer {
 	private int Customer_Id;
 	private String name;
 	private String email;
-	private String password;
+	private int password;
 	private int AccountNo;
 	private int Balance;
 	
 	public Customer() {}
 
-	public Customer(int customer_Id, String name, String email, String password, int accountNo, int balance) {
+	public Customer(int customer_Id, String name, String email, int password, int accountNo, int balance) {
 		super();
 		Customer_Id = customer_Id;
 		this.name = name;
@@ -45,11 +45,11 @@ public class Customer {
 		this.email = email;
 	}
 
-	public String getPassword() {
+	public int getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(int password) {
 		this.password = password;
 	}
 
@@ -73,9 +73,10 @@ public class Customer {
 	public String toString() {
 		return "Customer [Customer_Id=" + Customer_Id + ", name=" + name + ", email=" + email + ", password=" + password
 				+ ", AccountNo=" + AccountNo + ", Balance=" + Balance + "]";
-	}
-
+	};
 	
+	
+
 	
 	
 }

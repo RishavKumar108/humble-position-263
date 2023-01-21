@@ -1,6 +1,6 @@
 package com.Rishav.Model;
 
-import java.security.Timestamp;
+
 
 public class Transaction {
 	
@@ -8,18 +8,17 @@ public class Transaction {
 	private String  SenderName;
 	private String RecieverName;
 	private int Balance;
-	private Timestamp transaction_time;
+	private String date;
 	
 	public Transaction() {}
 
-	public Transaction(int transaction_Id, String senderName, String recieverName, int balance,
-			Timestamp transaction_time) {
+	public Transaction(int transaction_Id, String senderName, String recieverName, int balance, String date) {
 		super();
 		Transaction_Id = transaction_Id;
 		SenderName = senderName;
 		RecieverName = recieverName;
 		Balance = balance;
-		this.transaction_time = transaction_time;
+		this.date = date;
 	}
 
 	public int getTransaction_Id() {
@@ -54,19 +53,21 @@ public class Transaction {
 		Balance = balance;
 	}
 
-	public Timestamp getTransaction_time() {
-		return transaction_time;
+	public String getDate() {
+		return date;
 	}
 
-	public void setTransaction_time(Timestamp transaction_time) {
-		this.transaction_time = transaction_time;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	@Override
 	public String toString() {
 		return "Transaction [Transaction_Id=" + Transaction_Id + ", SenderName=" + SenderName + ", RecieverName="
-				+ RecieverName + ", Balance=" + Balance + ", transaction_time=" + transaction_time + "]";
-	};
+				+ RecieverName + ", Balance=" + Balance + ", date=" + date + "]";
+	}
+
 	
+
 	
 }
