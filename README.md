@@ -30,8 +30,10 @@ Roles of Customer are:
 • Transfer the money from his account to other account
 
 • Checking the transaction history
-Logo :
-![online Banking System](https://user-images.githubusercontent.com/105916425/213883443-23be5ad9-2f18-49aa-ae15-9654421f646b.png)
+
+# Online banking System
+![online Banking System](https://user-images.githubusercontent.com/105916425/213883522-5fd87f5a-e7e1-4943-80c7-8b81ed32de8b.png)
+
 
 
 
