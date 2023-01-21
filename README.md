@@ -31,9 +31,8 @@ Roles of Customer are:
 
 • Checking the transaction history
 
-# Online banking System
-![online Banking System](https://user-images.githubusercontent.com/105916425/213883522-5fd87f5a-e7e1-4943-80c7-8b81ed32de8b.png)
-
+# Logo
+![online Banking System](https://user-images.githubusercontent.com/105916425/213883573-ffbbe899-8fb7-415a-9528-29dcd534223e.png)
 
 
 
