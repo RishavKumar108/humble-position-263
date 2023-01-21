@@ -32,7 +32,7 @@ Roles of Customer are:
 • Checking the transaction history
 
 # Logo
-![online Banking System](https://user-images.githubusercontent.com/105916425/213883573-ffbbe899-8fb7-415a-9528-29dcd534223e.png)
+![online Banking System](alignitem center,https://user-images.githubusercontent.com/105916425/213883573-ffbbe899-8fb7-415a-9528-29dcd534223e.png)
 
 
 
