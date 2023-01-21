@@ -31,3 +31,6 @@ Roles of Customer are:
 
 • Checking the transaction history
 
+
+![BankingProject](https://user-images.githubusercontent.com/105916425/213883381-86225413-50b5-4b06-a6e1-87f2417fffd5.png)
+
