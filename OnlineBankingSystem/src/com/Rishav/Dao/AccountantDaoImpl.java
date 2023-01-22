@@ -75,9 +75,18 @@ public class AccountantDaoImpl implements AccountantDao{
 		try (Connection conn = DBUtil.provideConnection()) {
 
 			PreparedStatement ps = conn.prepareStatement(
-					"Update Customer set name = ? , email = ?,Password=?,AccountNo=?,Balance=? Customer_Id = ?");
-			//name, email, Password, AccountNo, Amount, id
-
+//					"Update Customer set name = ? , email = ?,Password=?,Customer_Id=?,Balance=? where AccountNo = ?");
+//			
+//			ps.setString(1, name);
+//			ps.setString(2, email);
+//			ps.setInt(3, password);
+//			ps.setInt(4, Customer_Id);		
+//			ps.setInt(5, Balance);
+//			ps.setInt(6, AccountNo);
+//			
+//			int x = ps.executeUpdate();
+					"update Customer set name = ?, email = ?, password = ?, "
+					+ "AccountNo = ?, Balance = ? where Customer_Id=?");
 			ps.setString(1, name);
 			ps.setString(2, email);
 			ps.setInt(3, password);
@@ -86,6 +95,10 @@ public class AccountantDaoImpl implements AccountantDao{
 			ps.setInt(6, Customer_Id);
 			
 			int x = ps.executeUpdate();
+			
+			
+			
+		
 			
 			if (x > 0) {
 				i++;
@@ -184,8 +197,8 @@ public class AccountantDaoImpl implements AccountantDao{
 			
 			 while(rs.next()) {
 					int tid=rs.getInt("Transaction_Id");
-					String Sender=rs.getString("SenderName");
-					String Receiver=rs.getString("RecieverName");
+					String Sender=rs.getString("Sender");
+					String Receiver=rs.getString("Receiver");
 					int Amount=rs.getInt("Balance");
 					String date=rs.getString("date");
 					

@@ -20,7 +20,7 @@ public class CustomerDaoImpl implements CustomerDao{
 
 	 public boolean CustomerLogin(String email,int password) throws CustomerException{
 		 
-		 boolean t = false;
+		 boolean flag = false;
 			try (Connection conn = DBUtil.provideConnection()) {
 
 				PreparedStatement ps = conn.prepareStatement("select * from Customer where email=? and Password=?");
@@ -29,7 +29,7 @@ public class CustomerDaoImpl implements CustomerDao{
 				ResultSet rs = ps.executeQuery();
 
 				if (rs.next()) {
-					t = true;
+					flag = true;
 				}
 
 			} catch (SQLException e) {
@@ -37,7 +37,7 @@ public class CustomerDaoImpl implements CustomerDao{
 
 			}
 
-			return t;
+			return flag;
 		 
 	 }
 	
@@ -65,7 +65,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 
 	@Override
-	public int TranforMoney(String senderUsername, String ReceiverUsername, int Amount) throws CustomerException {
+	public int TranforMoney(String senderUsername, String ReceiverUsername, int Balance) throws CustomerException {
 		// TODO Auto-generated method stub
 
 		int i = 0;
@@ -75,11 +75,11 @@ public class CustomerDaoImpl implements CustomerDao{
 		try (Connection conn = DBUtil.provideConnection()) {
 
 			PreparedStatement ps = conn
-					.prepareStatement("insert into Transaction (sender,Receiver,Amount,data)  values(?,?,?,?)");
+					.prepareStatement("insert into Transaction (sender,Receiver,Balance,date)  values(?,?,?,?)");
 
 			ps.setString(1, senderUsername);
 			ps.setString(2, ReceiverUsername);
-			ps.setInt(3, Amount);
+			ps.setInt(3, Balance);
 			ps.setString(4, strDate);
 			int x = ps.executeUpdate();
 
@@ -163,14 +163,14 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 
 	@Override
-	public int AddReciverAmount(int Amount, String email) throws CustomerException {
+	public int AddReciverAmount(int Balance, String email) throws CustomerException {
 		// TODO Auto-generated method stub
 
 		int i = 0;
 		try (Connection conn = DBUtil.provideConnection()) {
 
 			PreparedStatement ps = conn.prepareStatement("update Customer set balance = balance+? where email=? ");
-			ps.setInt(1, Amount);
+			ps.setInt(1, Balance);
 			ps.setString(2, email);
 			int rs = ps.executeUpdate();
 			if (rs>0) {
@@ -185,21 +185,21 @@ public class CustomerDaoImpl implements CustomerDao{
 	}
 
 	@Override
-	public List<Transaction> CheckTransactionHistory(String username) throws TransactionException {
+	public List<Transaction> CheckTransactionHistory(String email) throws TransactionException {
 		// TODO Auto-generated method stub
 		List<Transaction> transaction = new ArrayList<>();
 		try (Connection conn = DBUtil.provideConnection()) {
 			PreparedStatement ps = conn.prepareStatement("select * from transaction where sender=? ");
-			ps.setString(1, username);
+			ps.setString(1, email);
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
 				int tid = rs.getInt("Transaction_Id");
 				String Sender = rs.getString("Sender");
 				String Receiver = rs.getString("Receiver");
-				int Amount = rs.getInt("Amount");
+				int Balance = rs.getInt("Balance");
 				String date = rs.getString("date");
-				Transaction trans = new Transaction(tid, Sender, Receiver, Amount, date);
+				Transaction trans = new Transaction(tid, Sender, Receiver, Balance, date);
 				transaction.add(trans);
 			}
 		} catch (SQLException e) {

@@ -13,11 +13,10 @@ public class Main {
 	public static void main(String[] args) throws AccountantException, CustomerException, TransactionException {
 		// TODO Auto-generated method stub
 
-
 		Scanner sc = new Scanner(System.in);
 
 		MainAccountant dao = new MainAccountant();
-		MainCustomer c = new MainCustomer();
+		MainCustomer cdao = new MainCustomer();
 		while (true) {
 			int n = dao.firstPrint();
 			if (n == 1) {
@@ -44,14 +43,14 @@ public class Main {
 					}
 				}
 			} else if (n == 2) {
-				boolean bh = c.LoginCheckCustomer();
+				boolean bh = cdao.LoginCheckCustomer();
 				if (bh == true) {
 					while (true) {
-						int cw = c.CustomerWorkType();
+						int cw = cdao.CustomerWorkType();
 						if (cw == 1) {
-							c.SenderToMoney();
+							cdao.SenderToMoney();
 						} else if (cw == 2) {
-							c.transactionhistory();
+							cdao.transactionhistory();
 						} else {
 							break;
 						}
