@@ -17,13 +17,13 @@ public class MainAccountant {
 	AccountantDao dao = new AccountantDaoImpl();
 	public int firstPrint() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println(consolecolor.PURPLE + "+---------------------------+" + "\n"
+		System.out.println(consolecolor.CYAN_BOLD + "+---------------------------+" + "\n"
 				   + "| 1. Login As Accountant    |" + "\n"
 				   + "| 2. Login As Customer      |" + "\n"
 				   + "| 3. Exit                   |" + "\n"
 				   + "+---------------------------+" + consolecolor.RESET);
 	
-		System.out.println("Enter your Number accoding Your Work"+consolecolor.RESET);
+		System.out.println("Put Your Number Based On Your Work"+consolecolor.RESET);
 		int n = sc.nextInt();
 		return n;
 
@@ -38,6 +38,7 @@ public class MainAccountant {
 			System.out.println(consolecolor.YELLOW_BOLD + "enter Your Password" + consolecolor.RESET);
 			int HODPASSWORD = sc.nextInt();
 			boolean p = dao.AccountantLogin(HODEMAIL, HODPASSWORD);
+			
 			if (p == true) {
 				System.out.println(consolecolor.PURPLE_BOLD+ "Login Sucessfully" + consolecolor.RESET);
 				con1 = true;
