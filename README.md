@@ -1,13 +1,25 @@
 # Online banking System
 The objective of this project is to maintain the accounts like saving account, withdrawing, depositing money and applying loan to the user. Bank provides account number to the customer for dealing transactions in the bank. At first a user registers himself/herself as customer. After that account can be opened. A customer can open more than one account.
 
-Users of this project are:
+
+# Tech Stack
+
+Java
+
+JDBC
+
+MYSQL
+
+Github
+
+
+# Users of this project are:
 
 • Accountant
 
 • Customer
 
-Roles of Accountant are:
+# Roles of Accountant are:
 
 • Login using his/her username and password
 
@@ -23,7 +35,7 @@ Roles of Accountant are:
 
 • Taking care of deposit and withdrawal operations
 
-Roles of Customer are:
+# Roles of Customer are:
 
 • Login using his/her username and password
 
@@ -31,7 +43,7 @@ Roles of Customer are:
 
 • Checking the transaction history
 
-# Logo
+# Project Logo:
 ![online Banking System](https://user-images.githubusercontent.com/105916425/213883573-ffbbe899-8fb7-415a-9528-29dcd534223e.png)
 
 
