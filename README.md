@@ -13,13 +13,13 @@ MYSQL
 Github
 
 
-Users of this project are:
+# Users of this project are:
 
 • Accountant
 
 • Customer
 
-Roles of Accountant are:
+# Roles of Accountant are:
 
 • Login using his/her username and password
 
@@ -35,7 +35,7 @@ Roles of Accountant are:
 
 • Taking care of deposit and withdrawal operations
 
-Roles of Customer are:
+# Roles of Customer are:
 
 • Login using his/her username and password
 
